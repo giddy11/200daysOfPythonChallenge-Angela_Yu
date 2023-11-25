@@ -1,9 +1,9 @@
 **************The errors i came across today:*************************
 SyntaxError
 IndentationError
+NameError
 
 **********************************************************************
-https://www.youtube.com/watch?v=a_n-Umxj7KA&list=PLSzsOkUDsvdvGZ2fXGizY_Iz9j8-ZlLqh&index=10
 **********************************************************************
 
 **********************************************************************
