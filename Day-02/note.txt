@@ -1,3 +1,7 @@
+***Beginner: Understanding Data Types and How to Manipulate Strings***
+
+
+
 **************The errors i came across today:*************************
 TypeError
 
