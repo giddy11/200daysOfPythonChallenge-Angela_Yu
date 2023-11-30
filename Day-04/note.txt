@@ -6,10 +6,29 @@ https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/intr
 https://en.wikipedia.org/wiki/Mersenne_Twister
 
 
-**********************************************************************
+Module: This has a way of making our code more presentable by breaking a very large line of code into different modules
+that solves a given task. For example, the random module
 
-**********************************************************************
-**********************************************************************
+List: This is a data structure for storing data.
+
+random.choice(name_of_list): This picks random item from the list
+
+random.ranint(least, highest)
+
+
+*******************************Day-04/day-4-1-exercise.py***************************************
+
+
+
+
+*************************Day-04/day-4-2-exercise.py*********************************************
+https://replit.com/@appbrewery/day-4-2-exercise#README.md
+https://docs.python.org/3/tutorial/datastructures.html
+https://repl.it/@appbrewery/day-4-list-practice
+
+
+
+
 **********************************************************************
 **********************************************************************
 **********************************************************************
