@@ -11,24 +11,29 @@ def ShowScore(player_name, user_score, computer_score):
 def Outcome(player_name, user_choice, computer_choice, store, length_of_store):
     global user_score, computer_score
 
-    if user_choice >= 3 or user_choice < 0:
+    if user_choice >= length_of_store or user_choice < 0:
         print("You typed an invalid number")
     else:
 
         if user_choice == 0 and computer_choice == 2:
             user_score += 1
             print(f"You choose {store[user_choice]} Computer choose {store[computer_choice]}")
+            print("You won this round")
         elif computer_choice == 0 and user_choice == 2:
             computer_score += 1
             print(f"You choose {store[user_choice]}\nComputer choose {store[computer_choice]}")
+            print("You Lost this round")
         elif computer_choice > user_choice:
             computer_score += 1
             print(f"You choose {store[user_choice]}\nComputer choose {store[computer_choice]}")
+            print("You Lost this round")
         elif user_choice > computer_choice:
             user_score += 1
             print(f"You choose {store[user_choice]}\nComputer choose {store[computer_choice]}")
+            print("You won this round")
         elif computer_choice == user_choice:
             print(f"You choose {store[user_choice]}\nComputer choose {store[computer_choice]}")
+            print("Tie")
 
         ShowScore(player_name, user_score, computer_score)
 
@@ -36,11 +41,10 @@ def Rules():
     print("""
             Welcome to Rock, Paper, Scissors!
             Choose your move and see if you can beat the computer. Here are the rules:
-            😃Rock crushes Scissors
-            😃Scissors cuts Paper
-            😉Paper covers Rock
+            *Rock crushes Scissors
+            *Scissors cuts Paper
+            *Paper covers Rock
             Choose a number to make your move, and the computer will randomly choose its move. Good luck!
-
         """)
     
 def StartGame():
@@ -86,9 +90,10 @@ def StartGame():
                                 0 for Rock
                                 1 for Paper
                                 2 for Scissors
-                                """))
+
+                                (:)>"""))
         
-        computer_choice = random.randint(0, length_of_store)
+        computer_choice = random.randint(0, length_of_store - 1)
         
         Outcome(player_name, user_choice, computer_choice, store, length_of_store)
         is_next_round = input("Next Round y/n....").lower()
@@ -112,8 +117,9 @@ while True:
                Press the following key to begin:
                1. Start Game
                2. Rules
-               0. Exit\n\n
-               """))
+               0. Exit
+                       
+               (:)>"""))
     
     if choice == 2:
         Rules()
