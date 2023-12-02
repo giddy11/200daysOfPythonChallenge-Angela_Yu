@@ -18,4 +18,10 @@ Well it should be 100days but since am working full time I made it 200days. Shal
 **Day-05**: I learnt about Python Loops (for loop)
 
 
-**Day-06**: I learnt about Functions, Karel
+**Day-06**: I learnt about Functions, and the game : The maze
+
+
+**MAKE SURE TO GO BACK TO IMPLEMENT DAY6 AFTER COMPLETING DAY 15**
+
+
+**Day-07**: The HangMan, The clear method in Os import
