@@ -31,3 +31,6 @@ Well it should be 100days but since am working full time I made it 200days. Shal
 
 
 **Day-09**: Dictionaries, Nesting and the secret Auction
+
+
+**pythontutor.com is good for debugging**

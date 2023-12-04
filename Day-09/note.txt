@@ -2,3 +2,5 @@
 KeyError
 
 
+****************************************************************
+https://en.wikipedia.org/wiki/First-price_sealed-bid_auction
