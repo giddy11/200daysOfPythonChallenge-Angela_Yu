@@ -25,3 +25,9 @@ Well it should be 100days but since am working full time I made it 200days. Shal
 
 
 **Day-07**: The HangMan, The clear method in Os import
+
+
+**Day-08**: Function parameters and Caesar Cipher
+
+
+**Day-09**: Dictionaries, Nesting and the secret Auction
