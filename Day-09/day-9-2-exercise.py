@@ -24,7 +24,6 @@ travel_log = [
 # travel_log.append(my_dic)
 
 def add_new_country(country_visited, times_visited, cities_visited):
-    my_list = []
     new_country = {}
 
     new_country["country"] = country_visited
