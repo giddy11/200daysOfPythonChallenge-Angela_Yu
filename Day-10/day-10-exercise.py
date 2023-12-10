@@ -1,4 +1,6 @@
 def FormatName(first_name, last_name):
+    """Take a first and last name and format it
+    to return the title case version of the name."""
     if first_name == "" or last_name == "":
         return "You did'nt provide valid inputs."
     
@@ -9,3 +11,4 @@ def FormatName(first_name, last_name):
 
 res = FormatName("", "gideon")
 print(res)
+FormatName()

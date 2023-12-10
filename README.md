@@ -33,7 +33,7 @@ Well it should be 100days but since am working full time I made it 200days. Shal
 **Day-09**: Dictionaries, Nesting and the secret Auction
 
 
-**Day-10**: Functions, multi return values, The calculator project
+**Day-10**: Functions, multi return values, Docstrings, The calculator project
 
 
 

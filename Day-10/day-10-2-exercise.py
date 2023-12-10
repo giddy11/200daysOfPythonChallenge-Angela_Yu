@@ -18,11 +18,11 @@ def is_leap(year):
 def days_in_month(year, month):
   month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   
-  if (is_leap(year) == 1):
-     month_days[1] += 1
-     return month_days[month]
+  if (is_leap(year) == 1 and month == 2):
+    #  month_days[2] += 1
+     return 29
   else:
-     return month_days[month] 
+     return month_days[month - 1] 
   
 #🚨 Do NOT change any of the code below 
 year = int(input("Enter a year: ")) # Enter a year

@@ -4,14 +4,14 @@ import functions
 
 print(logo)
 
-user_continue = "y"
 calculate_again = True
 
 while calculate_again:
+    user_continue = "y"
         
-    functions.user_first_input = int(input("What's the first number?: "))
+    functions.user_first_input = float(input("What's the first number?: "))
     functions.user_op_choice = input("+ - * /\nPick an operator: ")
-    functions.user_second_input = int(input("What's the next number?: "))
+    functions.user_second_input = float(input("What's the next number?: "))
     Print_Result()   
 
     while user_continue == "y":
@@ -26,3 +26,6 @@ while calculate_again:
     if user_continue_calculating == "y":
            print(goodbye)
            break
+    elif user_continue_calculating == "n":
+           functions.user_first_input = 0
+           functions.user_second_input = 0
