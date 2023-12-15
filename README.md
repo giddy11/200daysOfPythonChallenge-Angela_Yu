@@ -36,5 +36,19 @@ Well it should be 100days but since am working full time I made it 200days. Shal
 **Day-10**: Functions, multi return values, Docstrings, The calculator project
 
 
+**Day-11**: The BlackJack Ace game
+
+
+**Day-12**: Number Guessing Game
+
+
+**Day-13**: Debugging Skill
+
+
+**Day-14**: The Higher Lower Game
+
+
+
+
 
 **pythontutor.com is good for debugging**
