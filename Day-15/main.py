@@ -1,21 +1,20 @@
-from data import resources, MENU, profit
+from data import resources, MENU
 
-money = 0
-water_resource = resources["water"]
-milk_resource = resources["milk"]
-coffee_resource = resources["coffee"]
+profit = 0
 
 
 def print_report():
+    """User needs to know the available resources"""
     print(f"""
-Water: {water_resource}ml
-Milk: {milk_resource}ml
-Coffee: {coffee_resource}g
+Water: {resources["water"]}ml
+Milk: {resources["milk"]}ml
+Coffee: {resources["coffee"]}g
 Money: ${profit}
 """)
 
 
 def process_coins():
+    """This does the conversion of the various coins and returns the dollar conversion"""
     no_of_quarters = float(input("How many quarters: ")) * 0.25
     no_of_dimes = float(input("How many dimes: ")) * 0.10
     no_of_nickels = float(input("How many nickels: ")) * 0.05
@@ -25,19 +24,34 @@ def process_coins():
     return dollar_conversion
 
 
-def check_resources_sufficiency(tea_type):
-    global  water_resource, milk_resource, coffee_resource
-    tea_type_water = MENU[tea_type]["ingredients"]["water"]
-    tea_type_milk = MENU[tea_type]["ingredients"]["milk"]
-    tea_type_coffee = MENU[tea_type]["ingredients"]["coffee"]
+def resource_allocation(order_ingredients):
+    """After a resource has be spent, it needs to be updated here"""
+    for x in order_ingredients:
+        resources[x] -= order_ingredients[x]
 
-    if water_resource >= tea_type_water and milk_resource >= tea_type_milk and coffee_resource >= tea_type_coffee:
-        water_resource -= tea_type_water
-        milk_resource -= tea_type_milk
-        coffee_resource -= tea_type_coffee
-        return 1
+
+def check_resources_sufficiency(order_ingredients):
+    """For a user to make purchase, there has to be confirmation of sufficient resources"""
+    for x in order_ingredients:
+        if order_ingredients[x] > resources[x]:
+            print(f"Sorry there is not enough {x}")
+            return -1
+
+    return 1
+
+
+def transaction(money_received, receipt_cost, user_selection):
+    """Transaction of the purchase, and if there's change for the user, it is returned to the user"""
+    global profit
+    if money_received == receipt_cost:
+        profit += receipt_cost
+        print(f"Here is your {user_selection}, Enjoy!")
+    elif money_received > receipt_cost:
+        profit += receipt_cost
+        balance = round(dollar - receipt_cost, 2)
+        print(f"Here is ${balance} in change.\nHere is your {user_selection} 😁, Enjoy!")
     else:
-        return -1
+        print(f"Sorry that's not enough money. Money refunded.")
 
 
 while True:
@@ -45,19 +59,13 @@ while True:
     if user_choice == "report":
         print_report()
     elif user_choice == "espresso" or user_choice == "latte" or user_choice == "cappuccino":
-        resource = check_resources_sufficiency(user_choice)
+        ingredient = MENU[user_choice]
+        resource = check_resources_sufficiency(ingredient["ingredients"])
         if resource == 1:
+            resource_allocation(ingredient["ingredients"])
             dollar = process_coins()
-            if dollar == MENU[user_choice]["cost"]:
-                profit += MENU[user_choice]["cost"]
-                print(f"Here is your {user_choice}, Enjoy!")
-            elif dollar > MENU[user_choice]["cost"]:
-                profit += MENU[user_choice]["cost"]
-                balance = dollar - MENU[user_choice]["cost"]
-                print(f"Here is ${balance} in change.\nHere is your {user_choice} 😁, Enjoy!")
-            else:
-                print(f"Sorry that's not enough money. Money refunded.")
-        else:
-            print("Sorry there is not enough resource")
+            menu_cost = MENU[user_choice]["cost"]
+            transaction(dollar, menu_cost, user_choice)
+
     elif user_choice == "x":
         break
